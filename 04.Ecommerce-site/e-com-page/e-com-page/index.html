@@ -141,10 +141,23 @@
             transform: translateY(-2px);
         }
 
+        .affiliate-disclaimer {
+            background-color: #fff0f0;
+            border: 2px solid #ffd1d1;
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 800px;
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
+        }
+
         .favorites-section {
             width: 100%;
             max-width: 1200px;
-            margin: 2rem auto 0;
+            margin: 1rem auto 0;
             padding: 2rem;
             border-top: 2px solid #ffd1d1;
         }
@@ -204,6 +217,17 @@
             color: #ff6b6b;
         }
 
+        .favorite-title a {
+            color: #ff6b6b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .favorite-title a:hover {
+            color: #ff8787;
+            text-decoration: underline;
+        }
+
         .favorite-price {
             color: #666;
             font-size: 1rem;
@@ -235,6 +259,23 @@
             border-radius: 12px;
             font-size: 0.8rem;
         }
+
+        .shop-now-btn {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .shop-now-btn:hover {
+            background-color: #ff8787;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -265,51 +306,21 @@
                 <button class="search-button">Show Random Fav!</button>
             </div>
         </div>
+        
+        <div class="affiliate-disclaimer">
+            <i class="fa fa-info-circle"></i> <strong>Disclosure:</strong> This site contains Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases.
+        </div>
 
         <div class="favorites-section">
             <h2 class="section-title"><i class="fa fa-heart"></i>Things I Absolutely Love</h2>
             <div class="favorites-grid">
-                <!-- Favorite Item 1 -->
+                <!-- Favorite Item 1 - Japanese Lamp -->
                 <div class="favorite-card">
                     <span class="love-badge">♡ Must-Have!</span>
-                    <img src="/api/placeholder/400/320" alt="Cozy Chair" class="favorite-image">
-                    <h3 class="favorite-title">Dream Reading Chair</h3>
-                    <div class="favorite-price">$499.99</div>
-                    <div class="favorite-note">Perfect for curling up with a good book ♡</div>
-                </div>
-
-                <!-- Favorite Item 2 -->
-                <div class="favorite-card">
-                    <span class="love-badge">♡ Obsessed</span>
-                    <img src="/api/placeholder/400/320" alt="Soft Throw" class="favorite-image">
-                    <h3 class="favorite-title">Cloud-Soft Throw Blanket</h3>
-                    <div class="favorite-price">$79.99</div>
-                    <div class="favorite-note">The softest blanket ever!</div>
-                </div>
-
-                <!-- Favorite Item 3 -->
-                <div class="favorite-card">
-                    <span class="love-badge">♡ Top Pick</span>
-                    <img src="/api/placeholder/400/320" alt="Table Lamp" class="favorite-image">
-                    <h3 class="favorite-title">Vintage-Style Table Lamp</h3>
-                    <div class="favorite-price">$129.99</div>
-                    <div class="favorite-note">Creates the perfect cozy ambiance ✨</div>
-                </div>
-
-                <!-- Favorite Item 4 -->
-                <div class="favorite-card">
-                    <span class="love-badge">♡ Love This!</span>
-                    <img src="/api/placeholder/400/320" alt="Bookshelf" class="favorite-image">
-                    <h3 class="favorite-title">Dreamy Floating Bookshelf</h3>
-                    <div class="favorite-price">$199.99</div>
-                    <div class="favorite-note">Makes any room look magical</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="footer">
-        Made with ♡ | My Favorite Finds 2025
-    </footer>
-</body>
-</html>
+                    <img src="/api/placeholder/400/320" alt="Japanese Paper Lamp" class="favorite-image">
+                    <h3 class="favorite-title">
+                        <a href="https://www.amazon.com/Noguchi-Akari-Japanese-Bedside-Lantern/dp/B0B2ZPY913?crid=UXAGYALHK1QJ&dib=eyJ2IjoiMSJ9._G48BXoW2lLAN08MIkPQaDz8gcgpM7HvF-vwu9TBWDWQaSIIC7S3n2DJV6xKUhv9TVVaCLMJWPst2NEeTMUrELacUl6LWwOrrOYWCMjqD_CyG0yg20ZITH62IcpAxTWb6DlfVNcr0UWSdzfyDzyFAh3xzeJMZ38oHKGab68cpFjCEeOtmRgnovhMPMQPhLPhyu1ZMOdyXKWkZ30h2pYNPJNst_mhJep0mCZ5Dx63smemdM8gZGQOkAV-5aGF1fCp4_1HjXfke33sAXT4R7C-E8WKKQTlH_KlBaPcOUGPA23C17T0-E3_qTwbbeVBo7zyLyxqNAoQwyFBkMwPnoa5ZJr4HRWq2DUHdpz89I45940.Rx97TawyVOymcRApSBexPoYzxgL709WjXXtTSqhrKjY&dib_tag=se&keywords=noguchi+lamp&qid=1740433891&s=home-garden&sprefix=noguchi+%2Cgarden%2C200&sr=1-2&linkCode=ll1&tag=1776016-20&linkId=c4bdd14944969b49bd4aaba60f8e6260&language=en_US&ref_=as_li_ss_tl">Japanese Decor Lantern Lamp</a>
+                    </h3>
+                    <div class="favorite-price">$44.99</div>
+                    <div class="favorite-note">The coziest Japandi style paper lamp for perfect ambient lighting ✨</div>
+                    <a href="https://www.amazon.com/Noguchi-Akari-Japanese-Bedside-Lantern/dp/B0B2ZPY913?crid=UXAGYALHK1QJ&dib=eyJ2IjoiMSJ9._G48BXoW2lLAN08MIkPQaDz8gcgpM7HvF-vwu9TBWDWQaSIIC7S3n2DJV6xKUhv9TVVaCLMJWPst2NEeTMUrELacUl6LWwOrrOYWCMjqD_CyG0yg20ZITH62IcpAxTWb6DlfVNcr0UWSdzfyDzyFAh3xzeJMZ38oHKGab68cpFjCEeOtmRgnovhMPMQPhLPhyu1ZMOdyXKWkZ30h2pYNPJNst_mhJep0mCZ5Dx63smemdM8gZGQOkAV-5aGF1fCp4_1HjXfke33sAXT4R7C-E8WKKQTlH_KlBaPcOUGPA23C17T0-E3_qTwbbeVBo7zyLyxqNAoQwyF
