@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Favorite Finds ♡</title>
+    <title>Curated Finds</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,12 +10,22 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, sans-serif;
+        }
+
+        :root {
+            --bg-color: #0A0A0A;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #A0A0A0;
+            --accent-color: #00FF85;
+            --accent-hover: #33FF9F;
+            --border-color: #1E1E1E;
         }
 
         body {
-            background-color: #fef6f6;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,21 +34,20 @@
         .header {
             display: flex;
             justify-content: flex-end;
-            padding: 1rem;
-            gap: 1rem;
+            padding: 1.5rem;
+            gap: 1.5rem;
         }
 
         .header a {
-            color: #ff6b6b;
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
-            padding: 0.5rem;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
         .header a:hover {
-            color: #ff8787;
-            transform: scale(1.05);
+            color: var(--accent-color);
         }
 
         .main-content {
@@ -46,31 +55,25 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding-bottom: 50px;
+            padding: 2rem 0 4rem;
         }
 
         .logo {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #333;
-            text-align: center;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
         }
 
         .logo span {
-            display: inline-block;
-            transition: transform 0.3s ease;
-        }
-
-        .logo span:hover {
-            transform: translateY(-3px);
+            color: var(--accent-color);
         }
 
         .search-container {
             width: 100%;
-            max-width: 584px;
-            margin: 0 auto 2rem;
-            padding: 0 1rem;
+            max-width: 640px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
         }
 
         .search-box {
@@ -80,288 +83,257 @@
 
         .search-input {
             width: 100%;
-            padding: 1rem 3rem;
+            padding: 1.2rem 3rem;
             font-size: 1rem;
-            border: 2px solid #ffd1d1;
-            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             outline: none;
-            transition: all 0.3s ease;
-            background: white;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
         }
 
         .search-input:hover, 
         .search-input:focus {
-            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.1);
-            border-color: #ff9999;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
         }
 
         .search-icon {
             position: absolute;
-            left: 1rem;
+            left: 1.2rem;
             top: 50%;
             transform: translateY(-50%);
-            color: #ff6b6b;
-        }
-
-        .heart-icon {
-            position: absolute;
-            right: 1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #ff6b6b;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .heart-icon:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .search-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            color: var(--text-secondary);
         }
 
         .search-button {
-            background-color: #fff;
-            border: 2px solid #ffd1d1;
-            border-radius: 20px;
-            color: #ff6b6b;
-            padding: 0.7rem 1.5rem;
+            position: absolute;
+            right: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            background: none;
+            border: none;
             cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .search-button:hover {
-            background-color: #fff0f0;
-            border-color: #ff9999;
-            transform: translateY(-2px);
+            color: var(--accent-hover);
         }
 
         .affiliate-disclaimer {
-            background-color: #fff0f0;
-            border: 2px solid #ffd1d1;
-            border-radius: 12px;
-            padding: 1rem;
-            margin: 1rem auto;
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 0 auto 3rem;
             max-width: 800px;
             text-align: center;
-            color: #ff6b6b;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.1);
         }
 
         .favorites-section {
             width: 100%;
             max-width: 1200px;
-            margin: 1rem auto 0;
-            padding: 2rem;
-            border-top: 2px solid #ffd1d1;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: #ff6b6b;
+            margin-bottom: 2.5rem;
+            color: var(--text-primary);
             font-size: 1.5rem;
-            font-weight: normal;
-        }
-
-        .section-title i {
-            margin-right: 0.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            font-weight: 600;
+            letter-spacing: -0.5px;
         }
 
         .favorites-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .favorite-card {
-            background: white;
-            border-radius: 16px;
-            padding: 1rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
             transition: all 0.3s ease;
-            border: 2px solid #ffd1d1;
+            border: 1px solid var(--border-color);
             position: relative;
             overflow: hidden;
         }
 
         .favorite-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 6px 16px rgba(255, 107, 107, 0.1);
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
         }
 
         .favorite-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            background: #191919;
         }
 
         .favorite-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
-            color: #ff6b6b;
+            font-weight: 500;
         }
 
         .favorite-title a {
-            color: #ff6b6b;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
 
         .favorite-title a:hover {
-            color: #ff8787;
-            text-decoration: underline;
+            color: var(--accent-color);
         }
 
         .favorite-price {
-            color: #666;
-            font-size: 1rem;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
         }
 
         .favorite-note {
             font-size: 0.9rem;
-            color: #888;
-            font-style: italic;
+            color: var(--text-secondary);
             margin-top: 0.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1.4;
         }
 
         .footer {
-            background: #fff0f0;
-            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
             text-align: center;
             font-size: 0.9rem;
-            color: #ff6b6b;
+            color: var(--text-secondary);
             margin-top: auto;
-        }
-
-        .love-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: #ff6b6b;
-            color: white;
-            padding: 0.3rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
+            border-top: 1px solid var(--border-color);
         }
 
         .shop-now-btn {
             display: inline-block;
-            background-color: #ff6b6b;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            margin-top: 0.5rem;
+            background-color: transparent;
+            color: var(--accent-color);
+            padding: 0.7rem 1.2rem;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid var(--accent-color);
         }
         
         .shop-now-btn:hover {
-            background-color: #ff8787;
-            transform: translateY(-2px);
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(0, 255, 133, 0.1);
+            color: var(--accent-color);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="#"><i class="fa fa-heart"></i> Wishlist</a>
-        <a href="#"><i class="fa fa-user"></i> My Account</a>
+        <a href="#">Collections</a>
+        <a href="#">Account</a>
     </div>
 
     <div class="main-content">
         <div class="logo">
-            <span style="color: #ff9999">M</span>
-            <span style="color: #ff8787">y</span>
-            <span style="color: #ff6b6b">F</span>
-            <span style="color: #ff5252">a</span>
-            <span style="color: #ff4d4d">v</span>
-            <span style="color: #ff3333">s</span>
-            <span style="color: #ff6b6b">♡</span>
+            curated<span>.</span>
         </div>
 
         <div class="search-container">
             <div class="search-box">
                 <i class="fa fa-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Search my favorite finds...">
-                <i class="fa fa-heart heart-icon"></i>
-            </div>
-            <div class="search-buttons">
-                <button class="search-button">Search Favorites</button>
-                <button class="search-button">Show Random Fav!</button>
+                <input type="text" class="search-input" placeholder="Search for products">
+                <button class="search-button"><i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
         
         <div class="affiliate-disclaimer">
-            <i class="fa fa-info-circle"></i> <strong>Disclosure:</strong> This site contains Amazon affiliate links. As an Amazon Associate I earn from qualifying purchases.
+            <i class="fa fa-info-circle"></i> This site contains affiliate links. As an Amazon Associate I earn from qualifying purchases.
         </div>
 
         <div class="favorites-section">
-            <h2 class="section-title"><i class="fa fa-heart"></i>Things I Absolutely Love</h2>
+            <h2 class="section-title">Curated Selection</h2>
             <div class="favorites-grid">
-                <!-- Favorite Item 1 - Japanese Lamp -->
+                <!-- Japanese Lamp -->
                 <div class="favorite-card">
-                    <span class="love-badge">♡ Must-Have!</span>
+                    <div class="tag">Editor's Choice</div>
                     <img src="/api/placeholder/400/320" alt="Japanese Paper Lamp" class="favorite-image">
                     <h3 class="favorite-title">
                         <a href="https://www.amazon.com/Noguchi-Akari-Japanese-Bedside-Lantern/dp/B0B2ZPY913?crid=UXAGYALHK1QJ&dib=eyJ2IjoiMSJ9._G48BXoW2lLAN08MIkPQaDz8gcgpM7HvF-vwu9TBWDWQaSIIC7S3n2DJV6xKUhv9TVVaCLMJWPst2NEeTMUrELacUl6LWwOrrOYWCMjqD_CyG0yg20ZITH62IcpAxTWb6DlfVNcr0UWSdzfyDzyFAh3xzeJMZ38oHKGab68cpFjCEeOtmRgnovhMPMQPhLPhyu1ZMOdyXKWkZ30h2pYNPJNst_mhJep0mCZ5Dx63smemdM8gZGQOkAV-5aGF1fCp4_1HjXfke33sAXT4R7C-E8WKKQTlH_KlBaPcOUGPA23C17T0-E3_qTwbbeVBo7zyLyxqNAoQwyFBkMwPnoa5ZJr4HRWq2DUHdpz89I45940.Rx97TawyVOymcRApSBexPoYzxgL709WjXXtTSqhrKjY&dib_tag=se&keywords=noguchi+lamp&qid=1740433891&s=home-garden&sprefix=noguchi+%2Cgarden%2C200&sr=1-2&linkCode=ll1&tag=1776016-20&linkId=c4bdd14944969b49bd4aaba60f8e6260&language=en_US&ref_=as_li_ss_tl">Japanese Decor Lantern Lamp</a>
                     </h3>
                     <div class="favorite-price">$44.99</div>
-                    <div class="favorite-note">The coziest Japandi style paper lamp for perfect ambient lighting ✨</div>
-                    <a href="https://www.amazon.com/Noguchi-Akari-Japanese-Bedside-Lantern/dp/B0B2ZPY913?crid=UXAGYALHK1QJ&dib=eyJ2IjoiMSJ9._G48BXoW2lLAN08MIkPQaDz8gcgpM7HvF-vwu9TBWDWQaSIIC7S3n2DJV6xKUhv9TVVaCLMJWPst2NEeTMUrELacUl6LWwOrrOYWCMjqD_CyG0yg20ZITH62IcpAxTWb6DlfVNcr0UWSdzfyDzyFAh3xzeJMZ38oHKGab68cpFjCEeOtmRgnovhMPMQPhLPhyu1ZMOdyXKWkZ30h2pYNPJNst_mhJep0mCZ5Dx63smemdM8gZGQOkAV-5aGF1fCp4_1HjXfke33sAXT4R7C-E8WKKQTlH_KlBaPcOUGPA23C17T0-E3_qTwbbeVBo7zyLyxqNAoQwyFBkMwPnoa5ZJr4HRWq2DUHdpz89I45940.Rx97TawyVOymcRApSBexPoYzxgL709WjXXtTSqhrKjY&dib_tag=se&keywords=noguchi+lamp&qid=1740433891&s=home-garden&sprefix=noguchi+%2Cgarden%2C200&sr=1-2&linkCode=ll1&tag=1776016-20&linkId=c4bdd14944969b49bd4aaba60f8e6260&language=en_US&ref_=as_li_ss_tl" class="shop-now-btn">Shop Now <i class="fa fa-external-link"></i></a>
+                    <div class="favorite-note">Dimmable Japanese paper lamp with a minimalist Japandi style. Perfect for creating a serene atmosphere.</div>
+                    <a href="https://www.amazon.com/Noguchi-Akari-Japanese-Bedside-Lantern/dp/B0B2ZPY913?crid=UXAGYALHK1QJ&dib=eyJ2IjoiMSJ9._G48BXoW2lLAN08MIkPQaDz8gcgpM7HvF-vwu9TBWDWQaSIIC7S3n2DJV6xKUhv9TVVaCLMJWPst2NEeTMUrELacUl6LWwOrrOYWCMjqD_CyG0yg20ZITH62IcpAxTWb6DlfVNcr0UWSdzfyDzyFAh3xzeJMZ38oHKGab68cpFjCEeOtmRgnovhMPMQPhLPhyu1ZMOdyXKWkZ30h2pYNPJNst_mhJep0mCZ5Dx63smemdM8gZGQOkAV-5aGF1fCp4_1HjXfke33sAXT4R7C-E8WKKQTlH_KlBaPcOUGPA23C17T0-E3_qTwbbeVBo7zyLyxqNAoQwyFBkMwPnoa5ZJr4HRWq2DUHdpz89I45940.Rx97TawyVOymcRApSBexPoYzxgL709WjXXtTSqhrKjY&dib_tag=se&keywords=noguchi+lamp&qid=1740433891&s=home-garden&sprefix=noguchi+%2Cgarden%2C200&sr=1-2&linkCode=ll1&tag=1776016-20&linkId=c4bdd14944969b49bd4aaba60f8e6260&language=en_US&ref_=as_li_ss_tl" class="shop-now-btn">View Product</a>
                 </div>
 
-                <!-- Favorite Item 2 - Ceramic Mug -->
+                <!-- Ceramic Mug -->
                 <div class="favorite-card">
-                    <span class="love-badge">♡ Obsessed</span>
+                    <div class="tag">Bestseller</div>
                     <img src="/api/placeholder/400/320" alt="Ceramic Coffee Mug" class="favorite-image">
                     <h3 class="favorite-title">
                         <a href="https://www.amazon.com/TaoTaojarvie-Ceramic-Coffee-Microwave-Diahwasher/dp/B0CQZNC4YX?crid=3FUBQVR3CNJZW&dib=eyJ2IjoiMSJ9.RnwF9faycxw93FCRqEUtOPCShfuUUTzMGeS4uo0IEji-h-SYi5dU0JD_Z0-O1BywPBw_Idng-6k0pxwWBxRMPc4fQpKdRI_VmXlpsAXpXHdZrtDtxB4C2QkGaedukZSsNX3C01vx8-mHrWua-2nB6qQP4ZwRtDFwplVfcivQCbho4ZulT7Mb8ygdHIlbK6cqNkvcFp2LJzVmRMimLfTeP7O4qIZB-rsziHvJp2xVOQVetRa3X9QcX316D4YY6neEjfTRZuLfdYDPTL27MtksALwhlDHUWwP5gL0nnAFWD_LpvV2nYQUoq8HuksE8thiVKUrhN4RLB2onF-dOiEC40WROzpDYs_le_gpnsrjn248.aZ_k7RfOi6U1zEAECnEIPU9-ov84l3iuBLJabkr6pP0&dib_tag=se&keywords=mid%2Bcentury%2Bmug&qid=1740436518&s=home-garden&sprefix=mid%2Bcentury%2Bmug%2Cgarden%2C164&sr=1-11&th=1&linkCode=sl1&tag=1776016-20&linkId=a3c62c79f0124ad94b7685a217941e4d&language=en_US&ref_=as_li_ss_tl">Extra Large Ceramic Coffee Mug</a>
                     </h3>
                     <div class="favorite-price">$19.99</div>
-                    <div class="favorite-note">Love this hand-painted 24oz mug - perfect for my morning coffee ritual!</div>
-                    <a href="https://www.amazon.com/TaoTaojarvie-Ceramic-Coffee-Microwave-Diahwasher/dp/B0CQZNC4YX?crid=3FUBQVR3CNJZW&dib=eyJ2IjoiMSJ9.RnwF9faycxw93FCRqEUtOPCShfuUUTzMGeS4uo0IEji-h-SYi5dU0JD_Z0-O1BywPBw_Idng-6k0pxwWBxRMPc4fQpKdRI_VmXlpsAXpXHdZrtDtxB4C2QkGaedukZSsNX3C01vx8-mHrWua-2nB6qQP4ZwRtDFwplVfcivQCbho4ZulT7Mb8ygdHIlbK6cqNkvcFp2LJzVmRMimLfTeP7O4qIZB-rsziHvJp2xVOQVetRa3X9QcX316D4YY6neEjfTRZuLfdYDPTL27MtksALwhlDHUWwP5gL0nnAFWD_LpvV2nYQUoq8HuksE8thiVKUrhN4RLB2onF-dOiEC40WROzpDYs_le_gpnsrjn248.aZ_k7RfOi6U1zEAECnEIPU9-ov84l3iuBLJabkr6pP0&dib_tag=se&keywords=mid%2Bcentury%2Bmug&qid=1740436518&s=home-garden&sprefix=mid%2Bcentury%2Bmug%2Cgarden%2C164&sr=1-11&th=1&linkCode=sl1&tag=1776016-20&linkId=a3c62c79f0124ad94b7685a217941e4d&language=en_US&ref_=as_li_ss_tl" class="shop-now-btn">Shop Now <i class="fa fa-external-link"></i></a>
+                    <div class="favorite-note">24oz hand-painted ceramic mug with large handle. Microwave and dishwasher safe, perfect for coffee enthusiasts.</div>
+                    <a href="https://www.amazon.com/TaoTaojarvie-Ceramic-Coffee-Microwave-Diahwasher/dp/B0CQZNC4YX?crid=3FUBQVR3CNJZW&dib=eyJ2IjoiMSJ9.RnwF9faycxw93FCRqEUtOPCShfuUUTzMGeS4uo0IEji-h-SYi5dU0JD_Z0-O1BywPBw_Idng-6k0pxwWBxRMPc4fQpKdRI_VmXlpsAXpXHdZrtDtxB4C2QkGaedukZSsNX3C01vx8-mHrWua-2nB6qQP4ZwRtDFwplVfcivQCbho4ZulT7Mb8ygdHIlbK6cqNkvcFp2LJzVmRMimLfTeP7O4qIZB-rsziHvJp2xVOQVetRa3X9QcX316D4YY6neEjfTRZuLfdYDPTL27MtksALwhlDHUWwP5gL0nnAFWD_LpvV2nYQUoq8HuksE8thiVKUrhN4RLB2onF-dOiEC40WROzpDYs_le_gpnsrjn248.aZ_k7RfOi6U1zEAECnEIPU9-ov84l3iuBLJabkr6pP0&dib_tag=se&keywords=mid%2Bcentury%2Bmug&qid=1740436518&s=home-garden&sprefix=mid%2Bcentury%2Bmug%2Cgarden%2C164&sr=1-11&th=1&linkCode=sl1&tag=1776016-20&linkId=a3c62c79f0124ad94b7685a217941e4d&language=en_US&ref_=as_li_ss_tl" class="shop-now-btn">View Product</a>
                 </div>
 
-                <!-- Additional Items -->
+                <!-- Third item - Bamboo Towel Set -->
                 <div class="favorite-card">
-                    <span class="love-badge">♡ Top Pick</span>
-                    <img src="/api/placeholder/400/320" alt="Table Lamp" class="favorite-image">
-                    <h3 class="favorite-title">Vintage-Style Table Lamp</h3>
-                    <div class="favorite-price">$129.99</div>
-                    <div class="favorite-note">Creates the perfect cozy ambiance ✨</div>
-                    <a href="#" class="shop-now-btn">Shop Now <i class="fa fa-external-link"></i></a>
+                    <div class="tag">New Addition</div>
+                    <img src="/api/placeholder/400/320" alt="Bamboo Towel Set" class="favorite-image">
+                    <h3 class="favorite-title">
+                        <a href="https://amzn.to/3XjslVE">Premium Bamboo Bath Towel Set</a>
+                    </h3>
+                    <div class="favorite-price">$59.99</div>
+                    <div class="favorite-note">Ultra-soft bamboo cotton blend towels that are more absorbent and eco-friendly than traditional cotton.</div>
+                    <a href="https://amzn.to/3XjslVE" class="shop-now-btn">View Product</a>
                 </div>
 
+                <!-- Fourth item - LED Light Strip -->
                 <div class="favorite-card">
-                    <span class="love-badge">♡ Love This!</span>
-                    <img src="/api/placeholder/400/320" alt="Bookshelf" class="favorite-image">
-                    <h3 class="favorite-title">Dreamy Floating Bookshelf</h3>
-                    <div class="favorite-price">$199.99</div>
-                    <div class="favorite-note">Makes any room look magical</div>
-                    <a href="#" class="shop-now-btn">Shop Now <i class="fa fa-external-link"></i></a>
+                    <div class="tag">Tech Pick</div>
+                    <img src="/api/placeholder/400/320" alt="LED Light Strip" class="favorite-image">
+                    <h3 class="favorite-title">
+                        <a href="https://amzn.to/4hSFuNp">Smart LED Light Strip</a>
+                    </h3>
+                    <div class="favorite-price">$29.99</div>
+                    <div class="favorite-note">16-million color customizable LED strip with app control and voice assistant compatibility.</div>
+                    <a href="https://amzn.to/4hSFuNp" class="shop-now-btn">View Product</a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        <div>Made with ♡ | My Favorite Finds 2025</div>
+        <div>© 2025 Curated Selections</div>
         <div style="margin-top: 0.5rem;">This site contains affiliate links. As an Amazon Associate I earn from qualifying purchases.</div>
     </footer>
 </body>
